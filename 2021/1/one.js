@@ -1,5 +1,5 @@
 const fs = require('fs');
-const readLine = require('readline')
+const readLine = require('readline');
 
 async function process() {
     const stream = fs.createReadStream('data.text');
