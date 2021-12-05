@@ -8,14 +8,12 @@ async function process() {
         crlfDelay: Infinity
     })
     let total = 0;
-    let index = 0;
     let previousParsedLine = null;
     for await (const line of reader) {
         const currentParsedLine = parseInt(line);
         if(previousParsedLine) {
             total += currentParsedLine > previousParsedLine ? 1 : 0
         }
-        index++
         previousParsedLine = currentParsedLine;
     }
     console.log('total :', total);
